@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :get_article, except: [ :index, :create ]
   
   def index
-    articles = Article.includes( :comments ).all
+    articles = Article.includes( :comments ).to_a
     
     render json: articles.to_json( include: [:comments] )
   end

@@ -4,6 +4,19 @@
  *= require_self
  */
 
+ul.article-links {
+  list-style-type: none;
+}
+
+ul.article-links li, p.articles-path {
+  cursor: pointer;
+}
+
+ul.article-links li:hover, p.articles-path:hover {
+  font-weight: bold;
+  color: #990000;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
