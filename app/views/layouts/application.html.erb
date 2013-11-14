@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Argh</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Argh</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Argh</a>
+          </div>
+        </div>
+      </div>
 
-<%= yield %>
+      <!-- Begin page content -->
+      <section class="container">
+        <%= yield %>
+      </section>
+    </div>
 
-</body>
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">&copy; 2013 by the Pirate Party.</p>
+      </div>
+    </div>
+  </body>
 </html>
