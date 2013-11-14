@@ -3,3 +3,4 @@
 //= require bootstrap
 //= require handlebars
 //= require moment
+//= require onepage
