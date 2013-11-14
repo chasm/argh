@@ -1,3 +1,17 @@
+<script id="articles-template" type="text/x-handlebars-template">
+  {{#each articles}}
+    <article>
+      <header>
+        <h1>{{title}}</h1>
+      </header>
+      <p>{{body}}</p>
+      <footer>
+        <p>{{created_at}}</p>
+      </footer>
+    </article>
+  {{/each}}
+</script>
+
 <section id="output"></section>
 
 <script>
@@ -9,13 +23,10 @@
         type: 'GET',
         data: 'json',
         success: function(data) {
+          var source = $("#articles-template").html();
+          var template = Handlebars.compile(source);
           console.log(data);
-          $.each(data, function(index, article) {
-          
-            $('#output').append( $('<p></p>').text(article.title) );
-          
-          });
-        
+          $('#output').html(template({articles: data}));
         },
         error: function(x,y,z) {
           console.log(x,y,z);
